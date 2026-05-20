@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="icon" type="image/x-icon" href="multimedia/favicon.ico">
+    <title>Prueba</title>
+</head>
+<body>
+<body>
+
+    <div class="barra_superior">
+        <button type="button" id="botonLimpiar">Eliminar todas las tareas</button>
+
+        <input type="text" id="tareaInput" placeholder="Introduce tu tarea aqui">
+
+        <button type="button" id="botonEnviar">Enviar📤</button>
+    </div>
+
+    <div class="contenedor-columnas">
+
+        <div class="columna">
+            <h3>Por hacer</h3>
+            <div class="zonaSoltar" id="porHacer"></div>
+        </div>
+
+        <div class="columna">
+            <h3>En proceso</h3>
+            <div class="zonaSoltar" id="enProceso"></div>
+        </div>
+
+        <div class="columna">
+            <h3>Terminadas</h3>
+            <div class="zonaSoltar" id="terminada"></div>
+        </div>
+
+    </div>
+    
+    <div id="origen"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
