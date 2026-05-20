@@ -157,3 +157,22 @@ botonEliminar.addEventListener("click", async function () {
     tareaSeleccionada.remove();
     tareaSeleccionada = null;
 });
+
+let botonLimpiar = document.querySelector("#botonLimpiar");
+
+botonLimpiar.addEventListener("click", async function () {
+
+    await fetch("/tareas", {
+        method: "DELETE"
+    });
+
+    // borrar todas las tareas visualmente
+    let tareas = document.querySelectorAll(".tareaBase");
+
+    tareas.forEach(tarea => {
+        tarea.remove();
+    });
+
+    tareaSeleccionada = null;
+});
+

@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "id": 1,
+        "descripcion": "Mostrar que esta tarea esta por hacer",
+        "estado": "por hacer"
+    },
+    {
+        "id": 2,
+        "descripcion": "Mostrar que esta tarea esta en proceso",
+        "estado": "en progreso"
+    },
+    {
+        "id": 3,
+        "descripcion": "Subir el respositorio a GitHub",
+        "estado": "terminada"
+    }
+]

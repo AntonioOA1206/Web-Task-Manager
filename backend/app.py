@@ -96,3 +96,8 @@ def borrar_tarea(tarea_id: int):
     guardar_tareas(tareas)
 
     return {"ok": True}
+
+@app.delete("/tareas")
+def borrar_todas():
+    guardar_tareas([])
+    return {"ok": True}
