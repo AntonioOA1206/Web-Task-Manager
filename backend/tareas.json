@@ -1,17 +1,27 @@
 [
     {
         "id": 1,
-        "descripcion": "Prueba de esto",
+        "descripcion": "tarea1 ",
         "estado": "por hacer"
     },
     {
         "id": 2,
-        "descripcion": "adawdawd",
+        "descripcion": "tarea 2",
         "estado": "en progreso"
     },
     {
         "id": 3,
-        "descripcion": "2435456",
+        "descripcion": "tarea 3",
         "estado": "terminada"
+    },
+    {
+        "id": 4,
+        "descripcion": "tarea 4",
+        "estado": "en progreso"
+    },
+    {
+        "id": 5,
+        "descripcion": "tarea 5",
+        "estado": "por hacer"
     }
 ]

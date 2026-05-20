@@ -1,3 +1,36 @@
+window.addEventListener("load", async function () {
+
+    const res = await fetch("/tareas");
+    const tareas = await res.json();
+
+    tareas.forEach(tarea => {
+        crearTareaEnPantalla(tarea);
+        colocarEnColumna(tarea);
+    });
+});
+
+function colocarEnColumna(tarea) {
+
+    let elemento = document.getElementById("t" + tarea.id);
+
+    if (!elemento) return;
+
+    if (tarea.estado === "por hacer") {
+        document.querySelector("#porHacer").appendChild(elemento);
+        elemento.classList.add("porHacer");
+    }
+
+    if (tarea.estado === "en progreso") {
+        document.querySelector("#enProceso").appendChild(elemento);
+        elemento.classList.add("enProceso");
+    }
+
+    if (tarea.estado === "terminada") {
+        document.querySelector("#terminada").appendChild(elemento);
+        elemento.classList.add("terminada");
+    }
+}
+
 let botones = document.querySelectorAll("button");
 
 botones.forEach (boton => {
@@ -57,7 +90,7 @@ function crearTareaEnPantalla(tarea) {
         e.dataTransfer.setData("id", div.id);
     });
 
-    document.querySelector("#origen").appendChild(div);    
+    document.querySelector("#origen").appendChild(div);
 }
 
 let zonas = document.querySelectorAll(".zonaSoltar");
