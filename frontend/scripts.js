@@ -16,6 +16,7 @@ botones.forEach (boton => {
 let input = document.querySelector("#tareaInput");
 let botonEnviar = document.querySelector("#botonEnviar");
 let tareaEsperando = document.querySelector("#tarea");
+let cont = 0;
 
 botonEnviar.addEventListener("click", function(e) {
     let texto = input.value;
@@ -25,7 +26,7 @@ botonEnviar.addEventListener("click", function(e) {
         tarea.innerText = texto;
         tarea.classList.add("tareaBase", "esperando");
         tarea.setAttribute("draggable", "true");
-        tarea.id = "t" + Date.now();
+        tarea.id = "t" + cont++;
 
         tarea.addEventListener("dragstart", function (e) {
             e.dataTransfer.setData("id", tarea.id);
