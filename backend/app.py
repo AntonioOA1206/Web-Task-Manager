@@ -86,3 +86,13 @@ def actualizar_estado(tarea_id: int, nuevo_estado: str):
 
     guardar_tareas(tareas)
     return {"ok": True}
+
+@app.delete("/tareas/{tarea_id}")
+def borrar_tarea(tarea_id: int):
+    tareas = leer_tareas()
+
+    tareas = [t for t in tareas if t["id"] != tarea_id]
+
+    guardar_tareas(tareas)
+
+    return {"ok": True}

@@ -19,8 +19,7 @@ body{
 }
 
 #tareaInput,
-#botonEnviar,
-#botonLimpiar{
+button {
     padding: 10px;
     font-size: 16px;
     transition: 0.3s;
@@ -98,4 +97,8 @@ body{
 
 .tareaBase.terminada {
     background-color: lightgreen;
+}
+
+.seleccionada {
+    outline: 3px solid blue;
 }

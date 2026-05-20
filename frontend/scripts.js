@@ -9,6 +9,8 @@ window.addEventListener("load", async function () {
     });
 });
 
+let tareaSeleccionada = null;
+
 function colocarEnColumna(tarea) {
 
     let elemento = document.getElementById("t" + tarea.id);
@@ -91,6 +93,18 @@ function crearTareaEnPantalla(tarea) {
     });
 
     document.querySelector("#origen").appendChild(div);
+
+    div.addEventListener("click", function () {
+
+        // quitar selección anterior
+        if (tareaSeleccionada) {
+            tareaSeleccionada.classList.remove("seleccionada");
+        }
+
+        // nueva selección
+        tareaSeleccionada = div;
+        div.classList.add("seleccionada");
+    });
 }
 
 let zonas = document.querySelectorAll(".zonaSoltar");
@@ -128,8 +142,18 @@ zonas.forEach(zona => {
     });
 });
 
-let tareaId = parseInt(elemento.id.replace("t", ""));
+let botonEliminar = document.querySelector("#botonEliminar");
 
-fetch(`/tareas/${tareaId}?nuevo_estado=${nuevoEstado}`, {
-    method: "PUT"
+botonEliminar.addEventListener("click", async function () {
+
+    if (!tareaSeleccionada) return;
+
+    let tareaId = parseInt(tareaSeleccionada.id.replace("t", ""));
+
+    await fetch(`/tareas/${tareaId}`, {
+        method: "DELETE"
+    });
+
+    tareaSeleccionada.remove();
+    tareaSeleccionada = null;
 });
