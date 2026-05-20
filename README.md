@@ -87,6 +87,11 @@ cd  Web-Task-Manager
 python -m uvicorn backend.app:app --reload
 ```
 
+o
+
+```bash
+python3 -m uvicorn backend.app:app --reload
+```
 ---
 
 # Cómo acceder a la web
